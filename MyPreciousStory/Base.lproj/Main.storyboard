@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="57W-OI-TcV">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root Tab Bar Controller-->
+        <scene sceneID="fB0-oX-m9T">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="57W-OI-TcV" customClass="RootTabBarController" customModule="MyPreciousStory" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hUb-QM-5Zg">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BuR-Mg-vqw" kind="relationship" relationship="viewControllers" id="oTw-vo-VfD"/>
+                        <segue destination="7d3-iM-yXS" kind="relationship" relationship="viewControllers" id="9s4-PF-u7L"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01K-b7-zWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--StoriesMap-->
+        <scene sceneID="yUR-qv-jFY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StoriesMap" id="BuR-Mg-vqw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Stories" image="applemapIcon_25px" id="dGd-v0-eas"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x2V-P8-yv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--UploadStory-->
+        <scene sceneID="hNA-50-zBc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UploadStory" id="7d3-iM-yXS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Save Story" image="addIcon_25px" id="5C1-40-MHD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N51-fL-8W8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="922"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="addIcon_25px" width="18.75" height="18.75"/>
+        <image name="applemapIcon_25px" width="18.75" height="18.75"/>
+    </resources>
+</document>

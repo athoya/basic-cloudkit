@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ab3-uP-txw">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Save Story-->
+        <scene sceneID="dTc-rP-tG1">
+            <objects>
+                <viewController title="Save Story" id="3nm-xX-oIO" customClass="UploadStoryViewController" customModule="MyPreciousStory" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dk3-cd-zxe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hW3-IO-keB">
+                                <rect key="frame" x="16" y="128" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hK-Ca-ZP3">
+                                <rect key="frame" x="8" y="193" width="359" height="450"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kCR-K9-Goj" appends="YES" id="3Pi-J4-Vyh"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5J-2u-9dV">
+                                <rect key="frame" x="8" y="194" width="359" height="449"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="openCamera" destination="3nm-xX-oIO" eventType="touchUpInside" id="smQ-Nx-pbk"/>
+                                    <segue destination="r1o-RF-VPA" kind="show" id="VRd-84-Hyb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2t-lm-zu3">
+                                <rect key="frame" x="170" y="673" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveDidTap" destination="3nm-xX-oIO" eventType="touchUpInside" id="Xuy-c6-kbx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qe0-MG-VWg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Save Story" id="SFj-dp-UJj">
+                        <barButtonItem key="backBarButtonItem" title=" " id="4Qa-Hp-3GN"/>
+                        <barButtonItem key="rightBarButtonItem" title=" " style="plain" id="tFn-Ve-jvo"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="recordButton" destination="q5J-2u-9dV" id="5Q8-36-NkB"/>
+                        <outlet property="thumbnail" destination="0hK-Ca-ZP3" id="qX6-r3-G2c"/>
+                        <outlet property="titleTextField" destination="hW3-IO-keB" id="BM1-Jk-fEP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2nN-ui-ctB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kCR-K9-Goj">
+                    <connections>
+                        <action selector="imageViewDidTap:" destination="3nm-xX-oIO" id="g9l-Kb-I6e"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1076" y="921.42857142857144"/>
+        </scene>
+        <!--Camera Controller-->
+        <scene sceneID="gV3-Y0-hVy">
+            <objects>
+                <viewController id="r1o-RF-VPA" customClass="CameraController" customModule="MyPreciousStory" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XdV-3n-OeO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeM-R0-47J">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ok1-FF-ujh" firstAttribute="bottom" secondItem="eeM-R0-47J" secondAttribute="bottom" id="Ili-hl-zoX"/>
+                            <constraint firstItem="eeM-R0-47J" firstAttribute="leading" secondItem="ok1-FF-ujh" secondAttribute="leading" id="hFJ-G5-Yh2"/>
+                            <constraint firstItem="eeM-R0-47J" firstAttribute="top" secondItem="ok1-FF-ujh" secondAttribute="top" id="lSM-g1-Np0"/>
+                            <constraint firstItem="eeM-R0-47J" firstAttribute="trailing" secondItem="ok1-FF-ujh" secondAttribute="trailing" id="y51-yp-NBb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ok1-FF-ujh"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraPreview" destination="eeM-R0-47J" id="7Fg-08-fdp"/>
+                        <segue destination="WAv-Cq-sN1" kind="unwind" identifier="unwindSegue" unwindAction="unwindSegueWithSegue:" id="nHB-EB-4dT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M9f-bE-sOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WAv-Cq-sN1" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="921"/>
+        </scene>
+        <!--Save Story-->
+        <scene sceneID="KlS-fN-JU4">
+            <objects>
+                <navigationController title="Save Story" automaticallyAdjustsScrollViewInsets="NO" id="Ab3-uP-txw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="geL-2G-lU3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0bI-EE-eH6">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3nm-xX-oIO" kind="relationship" relationship="rootViewController" id="7LZ-4s-17v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Bi-7a-w3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="921.58920539730138"/>
+        </scene>
+    </scenes>
+</document>
