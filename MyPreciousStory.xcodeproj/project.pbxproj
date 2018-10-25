@@ -28,8 +28,8 @@
 		55E30304217D714900A55D0B /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E30303217D714900A55D0B /* CameraController.swift */; };
 		F430A8C2217DD53F00581C38 /* NumberHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F430A8C1217DD53F00581C38 /* NumberHelper.swift */; };
 		F430A8C4217DDD6700581C38 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F430A8C3217DDD6700581C38 /* UIImage+Extension.swift */; };
+		F4618B8C217DE0BC00176284 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4618B8B217DE0BC00176284 /* CloudKit.framework */; };
 		F49281EE217B4E8800C95B34 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49281ED217B4E8800C95B34 /* CloudKitHelper.swift */; };
-		F4F69164217F187300CE5AC0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F69163217F187300CE5AC0 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,9 +56,9 @@
 		55E30303217D714900A55D0B /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		F430A8C1217DD53F00581C38 /* NumberHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberHelper.swift; sourceTree = "<group>"; };
 		F430A8C3217DDD6700581C38 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		F4618B89217DE0B600176284 /* MyPreciousStory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyPreciousStory.entitlements; sourceTree = "<group>"; };
+		F4618B8B217DE0BC00176284 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		F49281ED217B4E8800C95B34 /* CloudKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
-		F4F69161217F186A00CE5AC0 /* MyPreciousStory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyPreciousStory.entitlements; sourceTree = "<group>"; };
-		F4F69163217F187300CE5AC0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4F69164217F187300CE5AC0 /* CloudKit.framework in Frameworks */,
+				F4618B8C217DE0BC00176284 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +98,7 @@
 			children = (
 				55DCA848217A345C00B665F3 /* MyPreciousStory */,
 				55DCA847217A345C00B665F3 /* Products */,
-				F4F69162217F187300CE5AC0 /* Frameworks */,
+				F4618B8A217DE0BC00176284 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,7 +113,7 @@
 		55DCA848217A345C00B665F3 /* MyPreciousStory */ = {
 			isa = PBXGroup;
 			children = (
-				F4F69161217F186A00CE5AC0 /* MyPreciousStory.entitlements */,
+				F4618B89217DE0B600176284 /* MyPreciousStory.entitlements */,
 				55DCA849217A345C00B665F3 /* AppDelegate.swift */,
 				55DCA84D217A345C00B665F3 /* Main.storyboard */,
 				55DCA853217A345D00B665F3 /* Assets.xcassets */,
@@ -159,6 +159,14 @@
 			path = PopUp;
 			sourceTree = "<group>";
 		};
+		F4618B8A217DE0BC00176284 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4618B8B217DE0BC00176284 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F49281EF217B4E9800C95B34 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,14 +175,6 @@
 				55E30300217D6D8200A55D0B /* CameraHelper.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		F4F69162217F187300CE5AC0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F4F69163217F187300CE5AC0 /* CloudKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

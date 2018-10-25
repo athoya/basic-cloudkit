@@ -10,13 +10,16 @@ import Foundation
 import UIKit
 
 extension UIImage {
-    
-    func saveToTemporaryLocation() throws -> URL {
+    func saveToTempLocation() throws -> URL? {
         let imageData = self.pngData()
         
-        let filename = "\(Date().timeIntervalSince1970)" + ".png"
+        guard let data = imageData else {
+            return nil
+        }
+        
+        let filename = ProcessInfo.processInfo.globallyUniqueString + ".png"
         let url = NSURL.fileURL(withPath: NSTemporaryDirectory()).appendingPathComponent(filename)
-        try imageData?.write(to: url, options: .atomic)
+        try data.write(to: url, options: .atomic)
         
         return url
     }

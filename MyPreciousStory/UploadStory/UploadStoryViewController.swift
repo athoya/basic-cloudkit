@@ -83,10 +83,18 @@ class UploadStoryViewController: UIViewController {
     @IBAction func saveDidTap(){
         self.recordButton.isHidden = false
         self.tabBarController?.selectedIndex = 0
-        
-        let coordinate = CLLocationCoordinate2DMake(-6.3047146, 106.6439975)
-        let story = Story(title: titleTextField.text!, coordinate: coordinate, thumbnail: thumbnail.image!)
-        CloudKitHelper().createNewStory(story: story)
+        addToMapViewAndShowAnnotation()
+    }
+    
+    func addToMapViewAndShowAnnotation(){
+        if let controllers = self.tabBarController?.viewControllers, let navController = controllers[0] as? UINavigationController,
+            let storyMapVC = navController.viewControllers[0] as? StoriesMapViewController {
+            let (lat, lon) = NumberHelper().getRandomLatLong()
+            let dummyCoordinate = CLLocationCoordinate2DMake(lat, lon)
+            let story = Story(title: "Morning",coordinate: dummyCoordinate, thumbnail: #imageLiteral(resourceName: "beautiful_morning"))
+            storyMapVC.createAnnotation(story: story)
+            CloudKitHelper().createNewRecordByStory(story: story)
+        }
     }
     
 //    // MARK: - Navigation

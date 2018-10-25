@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,18 +21,28 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oGh-HG-6Eu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UTu-Bq-l0z">
+                                <rect key="frame" x="16" y="84" width="343" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="hFH-ih-Tt8"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oGh-HG-6Eu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1hk-dQ-g2q"/>
                             <constraint firstItem="oGh-HG-6Eu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9jb-Ab-5W1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UTu-Bq-l0z" secondAttribute="trailing" id="Cko-UQ-jjk"/>
                             <constraint firstItem="oGh-HG-6Eu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TK8-rk-8ee"/>
+                            <constraint firstItem="UTu-Bq-l0z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Z2C-EG-wbu"/>
+                            <constraint firstItem="UTu-Bq-l0z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="aEc-rF-P3o"/>
                             <constraint firstItem="oGh-HG-6Eu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ric-JR-SXC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Stories" id="tbL-gN-pPm"/>
                     <connections>
+                        <outlet property="recordFetchedProgressView" destination="UTu-Bq-l0z" id="bvR-eZ-hls"/>
                         <outlet property="storiesMapView" destination="oGh-HG-6Eu" id="0gI-B0-QYt"/>
                     </connections>
                 </viewController>

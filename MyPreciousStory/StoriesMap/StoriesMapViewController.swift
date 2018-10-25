@@ -12,6 +12,7 @@ import MapKit
 class StoriesMapViewController: UIViewController {
 
     @IBOutlet weak var storiesMapView: MKMapView!
+    @IBOutlet weak var recordFetchedProgressView: UIProgressView!
     
     var storiesMap: StoriesMap?
     
@@ -23,7 +24,6 @@ class StoriesMapViewController: UIViewController {
         
         storiesMapView.delegate = self
         
-        CloudKitHelper().fetchStoryRecord()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +38,16 @@ class StoriesMapViewController: UIViewController {
             
             storiesMapView.addAnnotation(beautifulMorningAnnotation)
         }
+        
+//        fetchStoryFromCloudKit()
+        CloudKitHelper().fetchAllStory { (stories) in
+            print(stories)
+            stories.forEach({ (story) in
+                DispatchQueue.main.async {
+                    self.createAnnotation(story: story)
+                }
+            })
+        }
     }
     
     func createAnnotation(story: Story) {
@@ -48,6 +58,20 @@ class StoriesMapViewController: UIViewController {
         
         storiesMapView.addAnnotation(newAnnotation)
         storiesMapView.setCenter(newAnnotation.coordinate, animated: true)
+    }
+    
+    func fetchStoryFromCloudKit(){
+        self.recordFetchedProgressView.progress = 0.0
+        CloudKitHelper().fetchAllStoryWithLoad(onProgress: { (progress) in
+            DispatchQueue.main.async {
+                self.recordFetchedProgressView.progress = progress
+            }
+        }) { (result) in
+            print(result)
+            DispatchQueue.main.async {
+                self.recordFetchedProgressView.progress = 1.0
+            }
+        }
     }
     
 
